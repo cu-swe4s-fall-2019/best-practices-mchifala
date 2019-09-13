@@ -5,7 +5,7 @@ import argparse
 
 def main(file_name, col_num):
     """
-    This script calculates the mean and standard deviation of a column in a data file.
+    This script calculates mean and std. deviation of a column in data file.
 
     Parameters:
     ___________
