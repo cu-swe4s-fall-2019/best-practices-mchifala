@@ -3,6 +3,24 @@ import math
 import argparse
 
 
+def calculate_mean(V):
+    try:
+        return sum(V)/len(V)
+
+    except ZeroDivisionError:
+        print("Column is empty. Cannot perform calculations")
+        sys.exit(1)
+
+
+def calculate_std(mean, V):
+    try:
+        return math.sqrt(sum([(mean-x)**2 for x in V]) / len(V))
+
+    except ZeroDivisionError:
+        print("Column is empty. Cannot perform calculations")
+        sys.exit(1)
+
+
 def main(file_name, col_num):
     """
     This script calculates mean and std. deviation of a column in data file.
@@ -46,20 +64,10 @@ def main(file_name, col_num):
         sys.exit(1)
 
     # Calculate mean of the elements in list
-    try:
-        mean = sum(V)/len(V)
-
-    except ZeroDivisionError:
-        print("Column is empty. Cannot perform calculations")
-        sys.exit(1)
+    mean = calculate_mean(V)
 
     # Calculate standard deviation of the elements in list
-    try:
-        stdev = math.sqrt(sum([(mean-x)**2 for x in V]) / len(V))
-
-    except ZeroDivisionError:
-        print("Column is empty. Cannot perform calculations")
-        sys.exit(1)
+    stdev = calculate_std(mean, V)
 
     # Print results
     print('mean:', mean)
