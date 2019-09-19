@@ -1,6 +1,9 @@
 test -e ssshtest || wget https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
 . ssshtest
 
+pycodestyle basic_test.py
+pycodestyle get_column_stats.py
+
 # Generate static input
 V=1
 (for i in `seq 1 100`; do 
