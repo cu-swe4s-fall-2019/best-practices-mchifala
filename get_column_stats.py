@@ -5,7 +5,7 @@ import argparse
 
 def calculate_mean(V):
     try:
-        return round(sum(V)/len(V),1)
+        return round(sum(V)/len(V), 1)
 
     except ZeroDivisionError:
         print("Column is empty. Cannot perform calculations.")
@@ -14,7 +14,7 @@ def calculate_mean(V):
 
 def calculate_std(mean, V):
     try:
-        return round(math.sqrt(sum([(mean-x)**2 for x in V]) / len(V)),2)
+        return round(math.sqrt(sum([(mean-x)**2 for x in V]) / len(V)), 2)
 
     except ZeroDivisionError:
         print("Column is empty. Cannot perform calculations.")
